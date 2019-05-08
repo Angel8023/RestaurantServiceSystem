@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespcae原来指命名空间 -->
+<!-- 现在namespace指要映射给哪个接口 -->
+<mapper namespace="ccnu.rss.dao.RestaurantDao">	
+	<!-- 注册新店铺 -->
+	<insert id="insert" parameterType="ccnu.rss.entity.Restaurant">
+		insert into restaurant(userAccount,resKinds,resName,resLocation,resTel,resDate,resPicPath,avgScore,sales,grade)
+		values(#{userAccount},#{resKinds},#{resName},#{resLocation},#{resTel},#{resDate},#{resPicPath},#{avgScore},#{sales},#{grade})
+	</insert>
+	
+	<select id="getCommendResList" resultType="ccnu.rss.entity.Restaurant">	
+		select * from restaurant order by sales desc limit 0,10 
+	</select>
+</mapper>

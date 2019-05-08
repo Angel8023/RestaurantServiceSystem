@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespcae原来指命名空间 -->
+<!-- 现在namespace指要映射给哪个接口 -->
+<mapper namespace="ccnu.rss.dao.UserDao">	
+	<!-- 按名称查询用户 -->					
+	<select id="query" resultType="ccnu.rss.entity.User">
+		select * from User where
+		userName like '%${userName}%'
+	</select>
+	
+	<!-- 注册插入新用户 -->
+	<insert id="insert" parameterType="ccnu.rss.entity.User">
+		insert into user(userAccount,userPasswd,userName,gender,mibao,identify)
+		values(#{userAccount},#{userPasswd},#{userName},#{gender},#{mibao},#{identify})
+	</insert>
+	
+	<select id="queryOne" parameterType="java.lang.String"
+		resultType="ccnu.rss.entity.User">
+		select * from user where userAccount=#{userAccount}
+	</select> 
+	
+	<update id="update" parameterType="ccnu.rss.entity.User">
+		update user set
+		userName=#{userName},userPasswd=#{userPasswd},userTel=#{userTel},
+		headPicPath=#{headPicPath},location=#{location},identify=#{identify}
+		where userAccount=#{userAccount}
+	</update>
+
+	<!-- 
+	<delete id="delete" parameterType="java.lang.String">
+		delete from users where
+		userID=#{userId}
+	</delete>
+	
+	-->
+
+	
+	
+</mapper>

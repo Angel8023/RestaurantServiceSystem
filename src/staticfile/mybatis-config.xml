@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- <settings>
+		<setting name="logImpl" value="LOG4J" />
+	</settings> -->
+	<!-- <plugins>
+		<plugin interceptor="com.github.pagehelper.PageHelper">
+			<property name="dialect" value="mysql" />
+		</plugin>
+	</plugins> -->
+
+	<mappers>		
+		<mapper resource="ccnu/rss/mapper/usermapper.xml" />
+		<mapper resource="ccnu/rss/mapper/restaurantmapper.xml"/>
+		
+		<!-- <mapper resource="ccnu/oj/mapper/choose-mapper.xml" />
+		<mapper resource="ccnu/oj/mapper/completion-mapper.xml" />
+		<mapper resource="ccnu/oj/mapper/torf-mapper.xml" />
+		<mapper resource="ccnu/oj/mapper/sa-mapper.xml" />
+		<mapper resource="ccnu/oj/mapper/saq-mapper.xml" />
+		<mapper resource="ccnu/oj/mapper/programming-mapper.xml" />
+		<mapper resource="ccnu/oj/mapper/problemmapper.xml" />
+		<mapper resource="ccnu/oj/mapper/usersdetealmapper.xml" />
+		<mapper resource="ccnu/oj/mapper/chatmapper.xml" /> -->
+		
+	</mappers>
+</configuration>
